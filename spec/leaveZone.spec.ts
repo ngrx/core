@@ -3,25 +3,25 @@ import 'rxjs/add/operator/map';
 import { createNgZone } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import '../lib/add/operator/enter-zone';
+import '../lib/add/operator/leaveZone';
 
 declare var Zone;
 
-describe('enterZone Operator', function() {
-  it('should cause an observable stream to enter the ng zone', function(done) {
+describe('leaveZone Operator', function() {
+  it('should cause an observable stream to leave the ng zone', function(done) {
     const zone = createNgZone();
 
-    Observable.of(1)
-      .enterZone(zone)
+    zone.run(() => Observable.of(1)
+      .leaveZone(zone)
       .map(() => Zone.current.name)
       .subscribe({
         next(name) {
-          expect(name).toEqual('angular');
+          expect(name).not.toEqual('angular');
           done();
         },
         error(err) {
-          done(err)
+          done(err);
         }
-      });
+      }));
   });
 });

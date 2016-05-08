@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 
-import { leaveZone, LeaveZoneSignature } from '../../operator/leave-zone';
+import { leaveZone, LeaveZoneSignature } from '../../operator/leaveZone';
 
 Observable.prototype.leaveZone = leaveZone;
 

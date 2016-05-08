@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 
-import { enterZone, EnterZoneSignature } from '../../operator/enter-zone';
+import { enterZone, EnterZoneSignature } from '../../operator/enterZone';
 
 Observable.prototype.enterZone = enterZone;
 

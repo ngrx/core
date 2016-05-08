@@ -15,9 +15,10 @@
     "../manual-typings/path-to-regexp.d.ts"
   ],
   "files": [
+    "./enterZone.spec.ts",
     "./index.spec.ts",
-    "./enter-zone.spec.ts",
-    "./leave-zone.spec.ts",
+    "./leaveZone.spec.ts",
+    "./SynSubject.spec.ts",
     "../typings/main.d.ts"
   ],
   "atom": {
