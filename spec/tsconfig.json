@@ -16,6 +16,8 @@
   ],
   "files": [
     "./index.spec.ts",
+    "./enter-zone.spec.ts",
+    "./leave-zone.spec.ts",
     "../typings/main.d.ts"
   ],
   "atom": {
