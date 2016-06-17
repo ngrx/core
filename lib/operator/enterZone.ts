@@ -1,18 +1,17 @@
-import { NgZone } from '@angular/core';
 import { Operator } from 'rxjs/Operator';
 import { Subscriber } from 'rxjs/Subscriber';
 import { Observable } from 'rxjs/Observable';
 
 export interface EnterZoneSignature<T> {
-  (zone: NgZone): Observable<T>;
+  (zone: { run: (fn: any) => any }): Observable<T>;
 }
 
-export function enterZone<T>(zone: NgZone): Observable<T> {
+export function enterZone<T>(zone: { run: (fn: any) => any }): Observable<T> {
   return this.lift(new EnterZoneOperator(zone));
 }
 
 export class EnterZoneOperator<T> implements Operator<T, T> {
-  constructor(private _zone: NgZone) { }
+  constructor(private _zone: { run: (fn: any) => any }) { }
 
   call(subscriber: Subscriber<T>, source: any): any {
     return source._subscribe(new EnterZoneSubscriber(subscriber, this._zone));
@@ -20,7 +19,7 @@ export class EnterZoneOperator<T> implements Operator<T, T> {
 }
 
 class EnterZoneSubscriber<T> extends Subscriber<T> {
-  constructor(destination: Subscriber<T>, private _zone: NgZone) {
+  constructor(destination: Subscriber<T>, private _zone: { run: (fn: any) => any }) {
     super(destination);
   }
 
