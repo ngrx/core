@@ -4,7 +4,7 @@
   "compilerOptions": {
     "outDir": "./release/es6",
     "target": "es6",
-    "sourceMap": true,
+    "sourceMap": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
