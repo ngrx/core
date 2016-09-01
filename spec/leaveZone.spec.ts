@@ -1,15 +1,15 @@
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
-import { createNgZone } from '@angular/core';
+import { NgZone } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import '../lib/add/operator/leaveZone';
+import '../src/add/operator/leaveZone';
 
 declare var Zone;
 
 describe('leaveZone Operator', function() {
   it('should cause an observable stream to leave the ng zone', function(done) {
-    const zone = createNgZone();
+    const zone = new NgZone({ enableLongStackTrace: false });
 
     zone.run(() => Observable.of(1)
       .leaveZone(zone)

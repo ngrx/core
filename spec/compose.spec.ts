@@ -1,4 +1,4 @@
-import { compose } from '../lib/compose';
+import { compose } from '../src/compose';
 
 const double = (i: number) => 2 * i;
 const add = (amount: number) => (i: number) => i + amount;

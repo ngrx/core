@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
-import { SyncSubject } from '../lib/SyncSubject';
+import { SyncSubject } from '../src/SyncSubject';
 
 
 describe('SyncSubject', function() {
@@ -41,22 +41,6 @@ describe('SyncSubject', function() {
     subject.next('foo');
     subject.next('bar');
     subject.complete();
-  });
-
-  it('should not allow values to be nexted after a return', function(done) {
-    const subject = new SyncSubject('init');
-    const expected = ['init', 'foo'];
-
-    subject.subscribe((x: string) => {
-      expect(x).toEqual(expected.shift());
-    }, null, done);
-
-    subject.next('foo');
-    subject.complete();
-
-    expect(() => {
-      subject.next('bar');
-    }).toThrow();
   });
 
   it('should clean out unsubscribed subscribers', function(done) {

@@ -1,7 +1,7 @@
 import 'rxjs/add/observable/of';
 import { Observable } from 'rxjs/Observable';
 
-import '../lib/add/operator/select';
+import '../src/add/operator/select';
 
 const state = {
   todos: {
