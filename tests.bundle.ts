@@ -21,15 +21,15 @@ Promise.all([
   System.import('@angular/platform-browser-dynamic/testing')
 ])
 // First, initialize the Angular testing environment.
-.then(([testing, testingBrowser]) => {
+.then(([testing, testingBrowser]: any) => {
   testing.getTestBed().initTestEnvironment(
     testingBrowser.BrowserDynamicTestingModule,
     testingBrowser.platformBrowserDynamicTesting()
   );
 })
 // Then we find all the tests.
-.then(() => (<any>require).context('./spec', true, /\.spec\.ts/))
+.then<any>((): any => (<any>require).context('./spec', true, /\.spec\.ts/))
 // And load the modules.
-.then(context => context.keys().map(context))
+.then((context: any) => context.keys().map(context))
 // Finally, start Karma to run the tests.
 .then(__karma__.start, __karma__.error);
