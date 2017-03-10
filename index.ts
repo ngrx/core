@@ -1,4 +1,4 @@
-export * from './src/operator/enterZone';
-export * from './src/operator/leaveZone';
-export * from './src/operator/select';
-export * from './src/compose';
+export { enterZone, EnterZoneSignature, EnterZoneOperator } from './src/operator/enterZone';
+export { leaveZone, LeaveZoneSignature, LeaveZoneOperator } from './src/operator/leaveZone';
+export { SelectSignature, select } from './src/operator/select';
+export { ComposeSignature, compose } from './src/compose';
