@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 
 import '../src/add/operator/enterZone';
 
-declare var Zone;
+declare var Zone: any;
 
 describe('enterZone Operator', function() {
   it('should cause an observable stream to enter the ng zone', function(done) {

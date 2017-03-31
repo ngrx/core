@@ -4,6 +4,7 @@
     "baseUrl": ".",
     "declaration": true,
     "stripInternal": true,
+    "noImplicitAny": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "module": "commonjs",

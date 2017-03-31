@@ -9,8 +9,8 @@ export interface ComposeSignature {
 }
 
 
-export const compose: ComposeSignature = (...functions) => {
-  return function(arg) {
+export const compose: ComposeSignature = (...functions: Function[]) => {
+  return function(arg: any) {
     if (functions.length === 0) {
       return arg;
     }

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 
 import '../src/add/operator/leaveZone';
 
-declare var Zone;
+declare var Zone: any;
 
 describe('leaveZone Operator', function() {
   it('should cause an observable stream to leave the ng zone', function(done) {
